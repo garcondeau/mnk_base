@@ -1,0 +1,123 @@
+build: dev
+suppliers:
+- download_files: null
+  files:
+  - columns: {0: supplier_part_number, 1: part_name, 2: qty, 3: price, 4: part_number,
+      6: manufacturer, 7: pack, 9: deposit}
+    compression: zip
+    encoding_errors: ignore
+    engine: python
+    error_bad_lines: false
+    file_name: data
+    file_type: csv
+    header: null
+    mod_time: null
+    sep: ;
+    url: ftp://ph6802:z7lIh8iv10pLRt@138.201.56.185/autolend/156127_w2.zip
+    use_cols: [0, 1, 2, 3, 4, 6, 7, 9]
+  name: autoland
+  status: true
+  updated: 00-00-0000
+- download_files: null
+  files:
+  - columns: {0: supplier_part_number, 1: part_name, 2: part_number, 3: manufacturer,
+      4: price, 6: currency, 7: weight, 9: bar_code, 12: qty1, 15: qty2, 16: qty3,
+      17: manufacturer_code}
+    encoding_errors: ignore
+    file_name: data
+    file_type: csv
+    header: null
+    mod_time: null
+    on_bad_lines: skip
+    sep: ;
+    url: ftp://3036856:0cL4X5@ftp.autopartner.dev/VIP_PORTAL_3036856_File_2.csv
+    use_cols: [0, 1, 2, 3, 4, 6, 7, 9, 12, 15, 16, 17]
+  name: autopartner
+  status: true
+  updated: 00-00-0000
+- download_files: null
+  files:
+  - columns: {0: manufacturer, 1: part_name, 2: supplier_part_number, 3: quantity,
+      4: price, 6: part_number}
+    compression: gzip
+    encoding_errors: ignore
+    engine: python
+    file_name: data
+    file_type: csv
+    header: null
+    mod_time: null
+    on_bad_lines: skip
+    sep: ;
+    url: ftp://autopartner_gdansk:rH4vY3yZ9iwE5a@138.201.56.185/29366_ce.gz
+    use_cols: [0, 1, 2, 3, 4, 6]
+  - columns: {0: supplier_part_number, 1: part_number, 2: manufacturer, 3: part_name}
+    encoding_errors: ignore
+    engine: python
+    file_name: dict
+    file_type: csv
+    header: null
+    merge_previous: inner
+    mod_time: null
+    sep: \t
+    skip_rows: 1
+    url: ftp://autopartner_gdansk:rH4vY3yZ9iwE5a@138.201.56.185/autopartner_gdansk_dict.csv
+    use_cols: [0, 1, 2, 3]
+  name: autopartner_gdansk
+  sql:
+    select: {manufacturer: manufacturer, part_name: part_name, part_number: part_number,
+      price: price, quantity: quantity, supplier_part_number: supplier_part_number}
+  status: true
+  updated: 00-00-0000
+- download_files:
+  - download_file_name: bronowski_data.xls
+    download_params: {sender: bronek@bronowski.pl, subject: Odbiorca 71233712 Oferta
+        towarowa}
+    download_type: mail
+  files:
+  - columns: null
+    file_name: data
+    file_type: excel
+    header: null
+    mod_time: null
+    skip_rows: 4
+    url: ftp://suppliers:zR3uB2aJ3m@138.201.56.185/bronowski/export.xls
+    use_cols: []
+  name: bronowski
+  status: false
+  updated: 00-00-0000
+- download_files:
+  - download_file_name: euroestcar_data.xlsx
+    download_params: {sender: raporty@vanking.com.pl, subject: null}
+    download_type: mail
+  files:
+  - {file_name: data, file_type: excel, header: null, mod_time: null, url: 'ftp://suppliers:zR3uB2aJ3m@138.201.56.185/euroestcar/export.xlsx'}
+  name: euroestcar
+  status: false
+  updated: 00-00-0000
+- download_files:
+  - download_file_name: vanking_data.xlsx
+    download_params: {sender: margareta.peptenaru@euroestcar.ro, subject: STOCK EEC}
+    download_type: mail
+  files:
+  - columns: {0: part_number, 1: part_name, 2: manufacturer, 3: quantity, 4: price}
+    file_name: data
+    file_type: excel
+    header: null
+    mod_time: null
+    skip_rows: 1
+    url: ftp://suppliers:zR3uB2aJ3m@138.201.56.185/vanking/export.xlsx
+    use_cols: [0, 1, 2, 3, 4]
+  name: vanking
+  status: false
+  updated: 00-00-0000
+- download_files:
+  - download_file_name: direct_24.zip
+    download_params: {url: 'https://direct24.com.ua/exporter/files/d0553d0b7205c12be91588a0d134574cc364771c'}
+    download_type: url
+  files:
+  - {encoding_errors: ignore, file_name: data, file_type: csv, header: false, mod_time: null,
+    sep: ;, skip_rows: 2, url: 'ftp://suppliers:zR3uB2aJ3m@138.201.56.185/direct_24/export.zip'}
+  name: direct_24
+  status: false
+  updated: 00-00-0000
+version: 1.0.0

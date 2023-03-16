@@ -1,0 +1,34 @@
+---
+build: dev
+version: 1.0.0
+suppliers:
+  autopartner:
+    status: true
+    updated: 00-00-0000
+  autopartner_gdansk:
+    status: false
+    updated: 00-00-0000
+  emoto:
+    status: true
+    updated: 00-00-0000
+  gordon:
+    status: true
+    updated: 00-00-0000
+  hart:
+    status: true
+    updated: 00-00-0000
+  intervito:
+    status: true
+    updated: 00-00-0000
+  motogama:
+    status: true
+    updated: 00-00-0000
+  motorol:
+    status: true
+    updated: 00-00-0000
+  paketo:
+    status: true
+    updated: 00-00-0000
+  rodon:
+    status: true
+    updated: 00-00-0000
